@@ -7,14 +7,11 @@ import tkinter as tk
 from tkinter import messagebox
 
 
-# ── Sabitler ────────────────────────────────────────────────
-
 KARA_LISTE_DOSYASI = "ip_blacklist.txt"
 GECMIS_DOSYASI      = os.path.join(os.path.expanduser("~"), "ip_gecmis.json")
 DNSBL_SUNUCUSU      = "zen.spamhaus.org"
 
 
-# ── Kontrol fonksiyonları ────────────────────────────────────
 
 def ip_formati_dogru_mu(ip):
     desen = r"^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$"
