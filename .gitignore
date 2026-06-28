@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+
+# PyInstaller
+build/
+dist/
+*.spec
+
+# Kişisel geçmiş kayıtları (kullanıcıya özel, repoya gitmemeli)
+gecmis.json
+ip_gecmis.json
+
+# IDE
+.vscode/
