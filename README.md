@@ -1,16 +1,16 @@
-# IP Blacklist Kontrol Aracı
+# IP Blacklist Checker
 
-Girilen bir IP adresinin kara listede olup olmadığını **yerel dosya** ve **online DNSBL sorgusu** ile kontrol eden Python/Tkinter masaüstü uygulaması.
+A Python/Tkinter desktop application that checks whether an IP address is blacklisted, using both a **local file** and a **live DNSBL lookup**.
 
-## Özellikler
+## Features
 
-- IPv4 format doğrulama (regex ile)
-- Yerel kara liste dosyasından kontrol (`ip_blacklist.txt`)
-- Online kontrol — Spamhaus DNSBL sorgusu (`socket` modülü ile, API key gerektirmez)
-- Geçmiş kayıt sistemi (JSON dosyasına otomatik kayıt)
-- Sade ve okunabilir Tkinter arayüzü
+- IPv4 format validation (with regex)
+- Local blacklist check (`ip_blacklist.txt`)
+- Online check — Spamhaus DNSBL lookup (via the `socket` module, no API key required)
+- History tracking (automatically saved to a JSON file)
+- Clean and simple Tkinter interface
 
-## Kullanılan Kütüphaneler
+## Libraries Used
 
 - `os`
 - `re`
@@ -19,7 +19,7 @@ Girilen bir IP adresinin kara listede olup olmadığını **yerel dosya** ve **o
 - `datetime`
 - `tkinter`
 
-## Kurulum ve Çalıştırma
+## Installation & Usage
 
 ```bash
 git clone https://github.com/YusufKebabci/ip-blacklist-kontrol.git
@@ -28,21 +28,20 @@ python ip_kontrol.py
 ```
 
 
-## Nasıl Çalışır?
+## How It Works
 
-1. Kullanıcı bir IP adresi girer.
-2. Program IP formatını doğrular.
-3. `ip_blacklist.txt` dosyasında yerel kontrol yapılır.
-4. IP, ters çevrilip `zen.spamhaus.org` adresine DNS sorgusu olarak gönderilir.
-5. Sonuç ekranda gösterilir ve `ip_gecmis.json` dosyasına kaydedilir.
+1. The user enters an IP address.
+2. The program validates the IP format.
+3. The IP is checked against the local `ip_blacklist.txt` file.
+4. The IP is reversed and queried against `zen.spamhaus.org` as a DNS lookup.
+5. The result is displayed on screen and saved to `ip_gecmis.json`.
 
-## Proje Yapısı
+## Project Structure
 
 ```
 ip-blacklist-kontrol/
-├── ip_kontrol.py        # Ana uygulama
-├── ip_blacklist.txt     # Örnek yerel kara liste
+├── ip_kontrol.py        # Main application
+├── ip_blacklist.txt     # Sample local blacklist
 ├── README.md
 └── .gitignore
 ```
-
